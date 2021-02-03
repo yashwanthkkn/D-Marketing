@@ -1,33 +1,34 @@
-<nav class="navbar navbar-expand-lg bg-b text-w sticky-top">
-    <a class="navbar-brand text-w hv-w" href="#">
-        <div class="row">
-            <div class="col-3"><i class="fas fa-star text-w h2 ml-3 "></i></div>
-            <div class="col-9"><span class="ml-2 h3 hv-w"> H y l e t</span><br>   </div>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-b sticky-top">
+    <a class="navbar-brand text-w" href="#">
+        <i class="fas fa-star text-l"></i>
+        <span class="ml-2 h5">Hylet</span>
     </a>
-    
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><i class="mt-1 mx-auto fas fa-bars text-w border-w"></i>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active mr-5">
-            <a class="nav-link text-w hv-w" href="/user/home">Home</a>
-          </li>
-          <li class="nav-item active mr-5">
-            <a class="nav-link text-w hv-w" href="/user/msg/list">Messages</a>
-          </li>
-          <li class="nav-item active mr-5">
-            <a class="nav-link text-w hv-w" href="/user/mylinks">My Links</a>
-          </li>
-          <li class="nav-item active mr-5">
-            <a class="nav-link text-w hv-w" href="/user/profile">Profile</a>
-          </li>
-    
-          <li class="nav-item mr-5">
-            <a class="nav-link text-w" href="/logout">Logout</a>
-          </li>
-        </ul>
-      </div>
-    
-  </nav>
+</nav>
+
+<div class="navigation">
+  <ul>
+      <li>
+          <a href="/user/home" class="hv-w">
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="title">Home</span>
+          </a>
+      </li>
+      <li>
+        <a href="/user/home" class="hv-w">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            <span class="title">Profile</span>
+        </a>
+      </li>
+      <li>
+          <a href="/logout" class="hv-w">
+              <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+              <span class="title">Logout</span>
+          </a>
+      </li>
+  </ul>
+</div>
+
+<div class="toggle" onclick="toggleMenu()">
+<span class="icon"><i class="fas fa-bars text-w"></i></span>
+</div>
+<div class="content mb-5">
