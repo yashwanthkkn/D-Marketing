@@ -11,6 +11,12 @@ label{
     border-radius: 8px;
 }
 
+.img-list-icon{
+    height: 150px;
+    width: inherit;
+    border-radius: 8px;
+}
+
 .logo{
     height: 120px;
     width: 220px;
