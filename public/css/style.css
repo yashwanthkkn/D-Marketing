@@ -1,3 +1,8 @@
+html{
+    margin: 0%;
+    padding: 0%;
+}
+
 .box-shadow{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -15,6 +20,11 @@ label{
     height: 150px;
     width: inherit;
     border-radius: 8px;
+}
+
+.img-add{
+    height: 200px;
+    width: inherit;
 }
 
 .logo{
