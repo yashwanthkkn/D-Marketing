@@ -1,4 +1,4 @@
-html{
+*{
     margin: 0%;
     padding: 0%;
 }
@@ -22,6 +22,11 @@ label{
     border-radius: 8px;
 }
 
+.img-rounded{
+    border-radius: 50px;
+    height: 80px;
+    width: 80px;
+}
 .img-add{
     height: 200px;
     width: inherit;
