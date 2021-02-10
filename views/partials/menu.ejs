@@ -1,23 +1,50 @@
 <!-- Search Bar -->
 <div class="col-12 py-3 ">
     <form class=" mx-4" >
-        <div class="input-group">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-                <a href="/user/list">
-                    <i class="fas fa-search"></i> 
-                </a>
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                  <a href="/user/list">
+                      <i class="fas fa-search"></i> 
+                  </a>
+              </div>
             </div>
           </div>
         </div>
+        <div class="d-none d-lg-block col-lg-4">
+          <button class="btn bg-o text-w ml-5 hv-w">Create Add</button>
+        </div>
+      </div>
+        
       </form> 
 </div>
 <!-- Menu -->
 <div class="col-12 bg-white">
     <div class="row text-center py-2">
-        <div class="col-4"><span class="text-b py-2 border-b-b">Top</span></div>
-        <div class="col-4"><span class="text-d-us">Location</span></div>
-        <div class="col-4"><span class="text-d-us">Recent</span></div>
+        <div class="col-4">
+          <a href="/user/home">
+            <%if(highlight == 1){%>
+              <span class="text-b py-2 border-b-b">Top</span>
+            <%}else{%>
+              <span class="text-d-us">Top</span>
+            <%}%>
+            
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="/b/list">
+            <%if(highlight == 2){%>
+              <span class="text-b py-2 border-b-b">My Adds</span>
+            <%}else{%>
+              <span class="text-d-us">My Add</span>
+            <%}%>
+          </a>
+        </div>
+        <div class="col-4">
+          <span class="text-d-us">My Offers</span>
+        </div>
     </div>
 </div>
