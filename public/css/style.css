@@ -42,3 +42,10 @@ label{
     height: 120px;
     width: 220px;
 }
+
+.img-preview{
+    max-width: 400px;
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
