@@ -1,0 +1,125 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container-fluid">
+    <div class="row">
+        <%- include("partials/menu") %>
+        <div class="col-12 mt-2">
+            <h5 class="text-b">Payments</h5>
+        </div>
+        <div class="col-12 mt-3">
+            <table class="table bg-white rounded">
+                <tr>
+                    <th>Name</th>
+                    <th>Details</th>
+                    <th>Payment</th>
+                </tr>
+                <tr>
+                    <td>App Launch</td>
+                    <td>
+                        <button class="btn btn-sm text-w bg-y" data-toggle="modal" data-target="#exampleModal"> View</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm text-w bg-y">Pay<i class="fas fa-rupee-sign ml-2"></i> 100</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- // logs -->
+        <div class="col-12 mt-2">
+            <h5 class="text-b">Logs</h5>
+        </div>
+        <div class="col-12 mt-3">
+            <table class="table bg-white rounded">
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>Event Shout</td>
+                    <td>12.2.22</td>
+                    <td>DEB</td>
+                    <td>
+                        <span class="text-danger">- <i class="fas fa-rupee-sign"></i> 300</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hylet</td>
+                    <td>12.3.22</td>
+                    <td>CED</td>
+                    <td>
+                        <span class="text-success">+ <i class="fas fa-rupee-sign"></i> 300</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hylet</td>
+                    <td>14.3.22</td>
+                    <td>REF</td>
+                    <td>
+                        <span class="text-success">+ <i class="fas fa-rupee-sign"></i> 400</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- POPUP -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-b" id="exampleModalLabel" >Billing Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+              <div class="col-12 mt-3">
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Tamil Memes</td>
+                        <td>Both</td>
+                        <td><i class="fas fa-rupee-sign"></i> 250</td>
+                    </tr>
+                    <tr>
+                        <td>Xyz Page</td>
+                        <td>Post</td>
+                        <td><i class="fas fa-rupee-sign"></i> 250</td>
+                    </tr>
+                    <tr>
+                        <td>Tamil Me</td>
+                        <td>Story</td>
+                        <td><i class="fas fa-rupee-sign"></i> 250</td>
+                    </tr>
+                    <tr class="text-d-us">
+                        <td></td>
+                        <td>Service</td>
+                        <td><i class="fas fa-rupee-sign"></i> 2.50</td>
+                    </tr>
+                    <tr class="h6 text-o">
+                        <td></td>
+                        <td>    
+                             Total
+                        </td>
+                        <td><i class="fas fa-rupee-sign"></i> 1050</td>
+                    </tr>
+                </table>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<%- include("partials/footer") %>
