@@ -1,0 +1,101 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container-fluid">
+    <div class="row">
+        <%- include("partials/menu") %>
+        <div class="col-12 mt-3">
+            <div class="px-2 py-3 bg-white">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="/img/hylet_png.png" alt="" class="img-brand-logo">
+                        <span class="text-b h5 ml-2">Hylet</span><br>
+                    </div>
+                    <div class="col-12 col-lg-8 mt-3">
+                        <div class="row">
+                            <div class="col-5">
+                                <p class="m-0 h6">Hylet App Launch</p>
+                                <small class="text-d-us">1/12/21</small>
+                            </div>
+                            <div class="col-7">
+                                <button class="btn bg-b text-w hv-w ">Start</button>
+                                <button class="btn bg-y text-w hv-w ml-2" data-toggle="modal" data-target="#exampleModal" type="button">Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8 mt-4">
+                        <p class="text-d-us">Total Promotions : <span class="text-o">5</span> pages </p>
+                        <p class="text-d-us">Promoted in : <span class="text-o">3</span> pages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-3" >
+            <h5 class="text-b">Promoting</h5>
+            <div class="row">
+                <!--Promoting Pages -->
+                <div class="col-12 col-lg-6">
+                    <div class="px-2 py-3 bg-white">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="/img/hylet_png.png" alt="" class="img-brand-logo">
+                                <span class="text-b h5 ml-2">Hylet</span><br>
+                                <small class="text-d-us mt-2">Uploaded at : 12.54 am</small>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-sm bg-y text-w hv-w">Proof</button>
+                                <button class="btn btn-sm bg-y text-w ml-1 hv-w">Visit Page</button><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-lg-6">
+                    <div class="px-2 py-3 bg-white">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="/img/hylet_png.png" alt="" class="img-brand-logo">
+                                <span class="text-b h5 ml-2">Hylet</span><br>
+                                <small class="text-d-us mt-2">Uploaded at : 12.54 am</small>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-sm bg-y text-w hv-w">Proof</button>
+                                <button class="btn btn-sm bg-y text-w ml-1 hv-w">Visit Page</button><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Preview</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12 bg-white py-3 rounded mt-3">
+                    <img src="http://cdn.livekindly.co/wp-content/uploads/2019/11/vegan-plant-based-news-vegan-burger-king-livekindly-Cropped-1.jpg" alt="img" class="img-add"> 
+                    <div class="brand-info mt-3">
+                         <h6 class="text-y">Whopper</h6>
+                         <p>Some desciption about the add goes here</p>
+                         <p></p>
+                         <button class="btn bg-b text-w">Visit Site</button>
+                         <button class="btn bg-b text-w hv-w float-right"><i class="fab fa-instagram"></i> Profile</button>
+                     </div>
+                 </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
+<%- include("partials/footer") %>
