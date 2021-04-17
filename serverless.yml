@@ -1,8 +1,8 @@
 
 service: hylet
 
-custom:
-  secrets: ${file(secrets.json)}
+# custom:
+#   secrets: ${file(secrets.json)}
 #app: your-app-name
 #org: your-org-name
 
@@ -12,12 +12,7 @@ frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
-  stage: ${self:custom.secrets.NODE_ENV}
   region: ap-south-1
-  environment: 
-    NODE_ENV: ${self:custom.secrets.NODE_ENV}
-    DB: ${self:custom.secrets.DB}
 
 functions:
   app:
@@ -32,5 +27,5 @@ functions:
           method: ANY
           cors: true
 
-plugins:
-  - serverless-offline
+# plugins:
+#   - serverless-offline
