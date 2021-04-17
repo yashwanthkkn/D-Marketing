@@ -1,5 +1,5 @@
 
-service: hylet
+service: hylet-app
 
 # custom:
 #   secrets: ${file(secrets.json)}
