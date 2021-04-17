@@ -4,9 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "offline": "sls offline start --skipCacheInvalidation"
+    "start": "node local.js"
   },
   "author": "Yashwanth K",
   "license": "ISC",
