@@ -124,11 +124,12 @@
 }
 
 .text-time-r {
-    float: right;
-    color: #aaa;
-  }
+float: right;
+color: #aaa;
+}
 
-  .text-time-l {
-    float: left;
-    color: #aaa;
-  }
+.text-time-l {
+float: left;
+color: #aaa;
+}
+
