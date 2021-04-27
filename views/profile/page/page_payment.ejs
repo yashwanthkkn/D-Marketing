@@ -1,0 +1,42 @@
+<!-- Payment Info -->
+<div class="col-12 mt-3">
+    <fieldset>
+        <div class="row">
+            <div class="col-6">
+                <legend class="text-b">Payment Info</legend>
+
+            </div>
+            <div class="col-6">
+                <a href="/p/profile" class="float-right">
+                    <button class="btn bg-b text-w hv-w">Back</button>
+                </a>
+            </div>
+        </div>
+        <p class="text-d-us">For Receiving Payments</p>
+        <form action="/p/paymentinfo" method="POST">
+            <div class="row bg-white py-2">
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="page_payment_type">Payment Type :</label>
+                        <select name="page_payment_type" id="page_payment_type" class="form-control">
+                            <option value="Google Pay">Google Pay</option>
+                            <option value="PhonePe">PhonePe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="profile_name">Linked Mobile Number :</label>
+                        <input type="number" name="page_payment_number" class="form-control" placeholder="+91" pattern="^[0-9]{10}$">
+                        <small class="text-d-us">We will send your Payment using this Number</small>
+                    </div>
+                </div>
+                <div class="col-12 my-3">
+                    <div class="text-center">
+                        <button class="btn bg-b text-w hv-w">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>
