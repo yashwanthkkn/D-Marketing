@@ -1,0 +1,122 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Profile Pic -->
+        <div class="col-12 text-center mt-3">
+            <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="Profile Pic" style="height: 150px; width: 150px; border-radius: 8px;">
+        </div>
+        <div class="col-12 text-center mt-1">
+            <small><i class="fas fa-plus mr-1"></i>Change Picture</small>
+        </div>
+        <div class="col-12 bg-white mt-2">
+            <div class="row text-center py-2">
+                <div class="col-6">
+                    <a href="/b/profile">
+                        <span class=" text-b py-2 border-b-b">Brand</span>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/p/profile">
+                        <span class="text-d-us">Page</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Profile Info -->
+        <div class="col-12 mt-3">
+            <fieldset>
+                <legend class="text-b">Brand / User Info</legend>
+                <form action="">
+                    <div class="row bg-white py-3">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Your Name or Brand Name :</label>
+                                <input type="text" name="page_name" class="form-control" placeholder="eg. Hylet Corp or Vishwas">
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="about">Interested ( You can choose more than one )</label>
+                            <br>
+                            <small class="text-d-us">For Better Suggestions</small>
+                            <br>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="meme" value="meme">
+                                    <label for="meme">Memes</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="clg" value="clg">
+                                    <label for="clg">College / School</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="music" value="music">
+                                    <label for="music">Music</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="indv" value='influencer'>
+                                    <label for="indv">Individual</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="ent" value='ent'>
+                                    <label for="indv">Entertainment</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="sport" value='sport'>
+                                    <label for="indv">Sports</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="blogger" value='blogger'>
+                                    <label for="indv">blogger</label>
+                                </div>
+                                <div class="col-6 col-lg-4">
+                                    <input type="checkbox" name="cat" id="art" value='art'>
+                                    <label for="indv">Artist</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3">
+                            <div class="text-center">
+                                <button class="btn bg-b text-w hv-w">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <!-- Payment Info -->
+        <div class="col-12 mt-3">
+            <fieldset>
+                <legend class="text-b">Payment Info</legend>
+                <p class="text-d-us">For Receiving Payments</p>
+                <form action="">
+                    <div class="row bg-white py-2">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="payment_type">Payment Type :</label>
+                                <select name="payment_type" id="payment_type" class="form-control">
+                                    <option value="ig">Google Pay</option>
+                                    <option value="ig">PhonePe</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Linked Mobile Number :</label>
+                                <input type="text" name="page_name" class="form-control" placeholder="+91">
+                                <small class="text-d-us">In case of refund, This Number will be used</small>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3">
+                            <div class="text-center">
+                                <button class="btn bg-b text-w hv-w">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

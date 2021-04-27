@@ -1,0 +1,171 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Profile Pic -->
+        <div class="col-12 text-center mt-3">
+            <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="Profile Pic" style="height: 150px; width: 150px; border-radius: 8px;">
+        </div>
+        <div class="col-12 text-center mt-1">
+            <small><i class="fas fa-plus mr-1"></i>Change Picture</small>
+        </div>
+        <div class="col-12 text-center mt-2">
+            <small class="text-d-us">Verification Pending</small>
+        </div>
+        <div class="col-12 bg-white mt-2">
+            <div class="row text-center py-2">
+                <div class="col-6">
+                    <a href="/b/profile">
+                        <span class=" text-d-us">Brand</span>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/p/profile">
+                        <span class="text-b py-2 border-b-b">Page</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Profile Info  -->
+        <div class="col-12 mt-3">
+            <fieldset>
+                <legend class="text-b">Page Info</legend>
+                            
+                <%if(page.page_info){%>
+                    <div class="row bg-white py-3">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Page Name :</label>
+                                <p class="form-control"><%= page.page_name%></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="page_type">Profile Type :</label>
+                                <p class="form-control"><%= page.page_type%></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_weight">Number of Followers / Subscribers :</label>
+                                <p class="form-control"><%= page.page_followers%></p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="about">Category </label><br>
+                            <div class="row">
+                                <div class="col-6 col-lg-4">
+                                    <%page.page_cat.forEach(cat=>{%>
+                                        <div class="col-6 col-lg-4">
+                                            <input type="checkbox" checked name="page_cat" id="<%=cat%>" value="<%=cat%>">
+                                            <label for="<%=cat%>"><%=cat%></label>
+                                        </div>
+                                    <%})%>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-center">
+                                <a href="/p/profile/edit/pageinfo">
+                                    <button class="btn bg-b text-w">Edit</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <%}else{%>
+                        <div class="row bg-white py-3">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <p>You have not updated any info about your page</p>
+                                    <a href="/p/profile/edit/pageinfo">
+                                        <button class="btn bg-b text-w">Update Info</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                </fieldset>
+            </div>
+        <!-- Promotion Info -->
+        <div class="col-12 mt-3">
+            <fieldset>
+                <legend class="text-b">Promotion Info</legend>
+                <form action="">
+                    <div class="row bg-white py-2">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Price for 1 Story :</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
+                                    </div>
+                                    <input type="number" class="form-control" name="story" id=story placeholder="eg. 100">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Price for 1 Post :</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
+                                    </div>
+                                    <input type="number" class="form-control" name="both" id="both" placeholder="eg. 100">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Price for both Post and Story :</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
+                                    </div>
+                                    <input type="number" class="form-control" name="post" id=story placeholder="eg. 100">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3">
+                            <div class="text-center">
+                                <button class="btn bg-b text-w hv-w">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <!-- Payment Info -->
+        <div class="col-12 mt-3">
+            <fieldset>
+                <legend class="text-b">Payment Info</legend>
+                <p class="text-d-us">For Receiving Payments</p>
+                <form action="">
+                    <div class="row bg-white py-2">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="payment_type">Payment Type :</label>
+                                <select name="payment_type" id="payment_type" class="form-control">
+                                    <option value="ig">Google Pay</option>
+                                    <option value="ig">PhonePe</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Linked Mobile Number :</label>
+                                <input type="text" name="page_name" class="form-control" placeholder="+91">
+                                <small class="text-d-us">We will send your Payment using this Number</small>
+                            </div>
+                        </div>
+                        <div class="col-12 my-3">
+                            <div class="text-center">
+                                <button class="btn bg-b text-w hv-w">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

@@ -1,0 +1,93 @@
+<!-- Profile Info  -->
+<div class="col-12 mt-3">
+    <fieldset>
+        <div class="row">
+            <div class="col-6">
+                <legend class="text-b">Page Info</legend>
+
+            </div>
+            <div class="col-6">
+                <a href="/p/profile" class="float-right">
+                    <button class="btn bg-b text-w hv-w">Back</button>
+                </a>
+            </div>
+        </div>
+        <form action="/p/pageinfo" method="POST">
+            <div class="row bg-white py-3">
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="profile_name">Page Name :</label>
+                        <input type="text" name="page_name" class="form-control" placeholder="eg. xyz memes, ss music" required>
+                        <small class="text-d-us">Using your Instagram Username is Recommended</small>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="page_type">Profile Type :</label>
+                        <select name="page_type" id="page_type" class="form-control" required>
+                            <option value="Instagram">Instagram Page</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="profile_weight">Number of Followers / Subscribers :</label>
+                        <select name="page_followers" id="page_floowers" class="form-control" required>
+                            <option value="1">1K +</option>
+                            <option value="10">10K +</option>
+                            <option value="50">50K +</option>
+                            <option value="100">100K +</option>
+                            <option value="250">250K +</option>
+                            <option value="500">500k +</option>
+                            <option value="750">750k +</option>
+                            <option value="1000">1M +</option>
+                            <option value="3000">3M +</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="about">Category ( You can choose more than one )</label><br>
+                    <div class="row">
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Memes" value="Memes">
+                            <label for="Memes">Memes</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="College" value="College">
+                            <label for="College">College</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Music" value="Music">
+                            <label for="Music">Music</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Individual" value='Individual'>
+                            <label for="Individual">Individual</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Entertainment" value='Entertainment'>
+                            <label for="Entertainment">Entertainment</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Sports" value='Sports'>
+                            <label for="Sports">Sports</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Blogger" value='Blogger'>
+                            <label for="Blogger">Blogger</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="page_cat" id="Art" value='Art'>
+                            <label for="Art">Art</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 my-3">
+                    <div class="text-center">
+                        <button class="btn bg-b text-w hv-w">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>
