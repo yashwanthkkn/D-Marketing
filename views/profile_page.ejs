@@ -54,13 +54,44 @@
                         <div class="col-12">
                             <label for="about">Category </label><br>
                             <div class="row">
+                                <%page.page_cat.forEach(cat=>{%>
                                 <div class="col-6 col-lg-4">
-                                    <%page.page_cat.forEach(cat=>{%>
-                                        <div class="col-6 col-lg-4">
-                                            <input type="checkbox" checked name="page_cat" id="<%=cat%>" value="<%=cat%>">
+                                        <input type="checkbox" checked name="page_cat" id="<%=cat%>" value="<%=cat%>">
                                             <label for="<%=cat%>"><%=cat%></label>
                                         </div>
-                                    <%})%>
+                                <%})%>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 mt-2">
+                            <div class="form-group">
+                                <label for="profile_name">Price for 1 Story :</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
+                                    </div>
+                                    <p class="form-control"><%= page.page_story%></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 mt-2">
+                            <div class="form-group">
+                                <label for="profile_name">Price for 1 Post :</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
+                                    </div>
+                                    <p class="form-control"><%= page.page_post%></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="profile_name">Price for both Post and Story :</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
+                                    </div>
+                                    <p class="form-control"><%= page.page_both%></p>
                                 </div>
                             </div>
                         </div>
@@ -86,54 +117,7 @@
                     <%}%>
                 </fieldset>
             </div>
-        <!-- Promotion Info -->
-        <div class="col-12 mt-3">
-            <fieldset>
-                <legend class="text-b">Promotion Info</legend>
-                <form action="">
-                    <div class="row bg-white py-2">
-                        <div class="col-12 col-lg-6">
-                            <div class="form-group">
-                                <label for="profile_name">Price for 1 Story :</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
-                                    </div>
-                                    <input type="number" class="form-control" name="story" id=story placeholder="eg. 100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="form-group">
-                                <label for="profile_name">Price for 1 Post :</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
-                                    </div>
-                                    <input type="number" class="form-control" name="both" id="both" placeholder="eg. 100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="form-group">
-                                <label for="profile_name">Price for both Post and Story :</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fas fa-rupee-sign"></i></div>
-                                    </div>
-                                    <input type="number" class="form-control" name="post" id=story placeholder="eg. 100">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 my-3">
-                            <div class="text-center">
-                                <button class="btn bg-b text-w hv-w">Save Changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </fieldset>
-        </div>
+        
         <!-- Payment Info -->
         <div class="col-12 mt-3">
             <fieldset>
