@@ -1,0 +1,70 @@
+<div class="col-12 mt-3">
+    <fieldset>
+        <div class="row">
+            <div class="col-6">
+                <legend class="text-b">Brand / User Info</legend>
+            </div>
+            <div class="col-6">
+                <a href="/b/profile" class="float-right">
+                    <button class="btn bg-b text-w hv-w">Back</button>
+                </a>
+            </div>
+        </div>
+        <form action="/b/brandinfo" method="POST">
+            <div class="row bg-white py-3">
+                <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <label for="brand_name">Your Name or Brand Name :</label>
+                        <input type="text" name="brand_name" class="form-control" placeholder="eg. Hylet Corp or Vishwas" required>
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <label for="about">Interested ( You can choose more than one )</label>
+                    <br>
+                    <small class="text-d-us">For Better Suggestions</small>
+                    <br>
+                    <p></p>
+                    <div class="row">
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Memes" value="Memes">
+                            <label for="Memes">Memes</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="College" value="College">
+                            <label for="College">College</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Music" value="Music">
+                            <label for="Music">Music</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Individual" value='Individual'>
+                            <label for="Individual">Individual</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Entertainment" value='Entertainment'>
+                            <label for="Entertainment">Entertainment</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Sports" value='Sports'>
+                            <label for="Sports">Sports</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Blogger" value='Blogger'>
+                            <label for="Blogger">Blogger</label>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <input type="checkbox" name="brand_cat" id="Artist" value='Artist'>
+                            <label for="Artist">Artist</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 my-3">
+                    <div class="text-center">
+                        <button class="btn bg-b text-w hv-w">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>

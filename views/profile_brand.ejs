@@ -27,62 +27,51 @@
         <div class="col-12 mt-3">
             <fieldset>
                 <legend class="text-b">Brand / User Info</legend>
-                <form action="">
+                <%if(brand.brand_info){%>
+
                     <div class="row bg-white py-3">
                         <div class="col-12 col-lg-6">
                             <div class="form-group">
                                 <label for="profile_name">Your Name or Brand Name :</label>
-                                <input type="text" name="page_name" class="form-control" placeholder="eg. Hylet Corp or Vishwas">
+                                <p class="form-control"><%= brand.brand_name%></p>
                             </div>
                         </div>
                         <div class="col-12 mt-3">
-                            <label for="about">Interested ( You can choose more than one )</label>
+                            <label for="about">Interested In</label>
                             <br>
                             <small class="text-d-us">For Better Suggestions</small>
                             <br>
                             <p></p>
                             <div class="row">
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="meme" value="meme">
-                                    <label for="meme">Memes</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="clg" value="clg">
-                                    <label for="clg">College / School</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="music" value="music">
-                                    <label for="music">Music</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="indv" value='influencer'>
-                                    <label for="indv">Individual</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="ent" value='ent'>
-                                    <label for="indv">Entertainment</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="sport" value='sport'>
-                                    <label for="indv">Sports</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="blogger" value='blogger'>
-                                    <label for="indv">blogger</label>
-                                </div>
-                                <div class="col-6 col-lg-4">
-                                    <input type="checkbox" name="cat" id="art" value='art'>
-                                    <label for="indv">Artist</label>
-                                </div>
+                                <%brand.brand_cat.forEach(cat=>{%>
+                                    <div class="col-6 col-lg-4">
+                                            <input type="checkbox" checked name="page_cat" id="<%=cat%>" value="<%=cat%>">
+                                            <label for="<%=cat%>"><%=cat%></label>
+                                    </div>
+                                <%})%>
                             </div>
                         </div>
-                        <div class="col-12 my-3">
+                        <div class="col-12">
                             <div class="text-center">
-                                <button class="btn bg-b text-w hv-w">Save Changes</button>
+                                <a href="/b/profile/edit/brandinfo">
+                                    <button class="btn bg-b text-w">Edit</button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </form>
+                <%}else{%>
+                    <div class="row bg-white py-3">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <p>You have not updated any info about your page</p>
+                                <a href="/b/profile/edit/brandinfo">
+                                    <button class="btn bg-b text-w">Update Info</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <%}%>
+                
             </fieldset>
         </div>
         <!-- Payment Info -->
