@@ -79,31 +79,42 @@
             <fieldset>
                 <legend class="text-b">Payment Info</legend>
                 <p class="text-d-us">For Receiving Payments</p>
-                <form action="">
+                <%if(brand.brand_payment_info){%>
                     <div class="row bg-white py-2">
                         <div class="col-12 col-lg-6">
                             <div class="form-group">
                                 <label for="payment_type">Payment Type :</label>
-                                <select name="payment_type" id="payment_type" class="form-control">
-                                    <option value="ig">Google Pay</option>
-                                    <option value="ig">PhonePe</option>
-                                </select>
+                                <p class="form-control"><%= brand.brand_payment_type%></p>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="form-group">
                                 <label for="profile_name">Linked Mobile Number :</label>
-                                <input type="text" name="page_name" class="form-control" placeholder="+91">
+                                <p class="form-control "><%= brand.brand_payment_number%></p>
                                 <small class="text-d-us">In case of refund, This Number will be used</small>
                             </div>
                         </div>
-                        <div class="col-12 my-3">
+                        <div class="col-12">
                             <div class="text-center">
-                                <button class="btn bg-b text-w hv-w">Save Changes</button>
+                                <a href="/b/profile/edit/paymentinfo">
+                                    <button class="btn bg-b text-w">Edit</button>
+                                </a>
                             </div>
                         </div>
                     </div>
-                </form>
+                <%}else{%>
+                    <div class="row bg-white py-3">
+                        <div class="col-12">
+                            <div class="text-center">
+                                <p>You have not updated any info about your page</p>
+                                <a href="/b/profile/edit/paymentinfo">
+                                    <button class="btn bg-b text-w">Update Info</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <%}%>
+              
             </fieldset>
         </div>
     </div>
