@@ -1,6 +1,10 @@
 <!-- Profile Pic -->
 <div class="col-12 text-center mt-3">
-    <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="Profile Pic" style="height: 150px; width: 150px; border-radius: 8px;">
+    <% if(user.dp_url){ %>
+        <img src="<%=user.dp_url%>" alt="Profile Pic" style="height: 150px; width: 150px; border-radius: 8px;">
+    <% }else{ %>
+        <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="Profile Pic" style="height: 150px; width: 150px; border-radius: 8px;">
+    <% } %>
 </div>
 <div class="col-12 text-center mt-1">
     <button class=" btn bg-w" data-toggle="modal" data-target="#DpModal"><i class="fas fa-plus mr-1"></i>Change Picture</small>
@@ -17,12 +21,12 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form action="/upload/dp" enctype="multipart/form-data" method="POST">
               <div class="row">
                 <div class="col-12 mt-2">
                     <label for="">Upload Image ( JPG )</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFile" size="1" required>
+                        <input type="file" class="custom-file-input" id="customFile" size="1" required name="dp">
                         <label class="custom-file-label" for="customFile" >Choose file</label>
                     </div>
                 </div>
