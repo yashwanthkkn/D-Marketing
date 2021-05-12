@@ -4,25 +4,41 @@
     <div class="row">
         <%- include("partials/menu") %>
         <div class="col-12 mt-4">
-            <div class="row mt-2">
-                <div class="col-4 col-lg-4">
-                    <img src="https://cdn.shopify.com/s/files/1/0298/3015/2291/files/WHy_9501de14-762e-4ea6-8a1c-2ecf37fdd00d_600x600.png?v=1602920637" alt="" class="img-list-icon">
-                </div>
-                <div class="col-8 col-lg-8">
-                    <div class="py-2">
-                        <p class="text-b m-0">Mokka_Engineer <i class="fas fa-check-circle"></i></p>
-                        <small class="text-d-s">Followers : 233k</small>
-                        <p></p>
-                        <p class="m-0">Post + Story :  <strong class="text-o"><i class="fas fa-rupee-sign"></i> 200</strong> </p>
-                        <a href="/user/view">
-                            <button class="btn bg-y text-w mt-2">View Profile</button>
-                        </a>
+           <% if(pages){%>
+            <%   pages.forEach(page=>{%>
+                    <div class="row mt-2">
+                        <div class="col-4 col-lg-4">
+                            <img src="<%=user.dp_url%>" alt="" class="img-list-icon">
+                        </div>
+                        <div class="col-8 col-lg-8">
+                            <div class="py-2">
+                                <p class="text-b m-0"><%= page.page_name%> <i class="fas fa-check-circle"></i></p>
+                                <% if(page.page_followers >= 1000){
+                                     page.page_followers+="M";
+                                }else{
+                                    page.page_followers+="K";
+                                }%>
+                                <small class="text-d-s">Followers : <%= page.page_followers%></small>
+                                <p></p>
+                                <p class="m-0">Post + Story :  <strong class="text-o"><i class="fas fa-rupee-sign"></i> <%= page.page_both%></strong> </p>
+                                <a href="/user/view">
+                                    <button class="btn bg-y text-w mt-2">View Profile</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                <%})%>
+            <%}else{%>
+                <div class="row mt-2">
+                    <div class="12">
+                        <div class="text-center">
+                            <p class="text-d-us">No results matched your query</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-
-
+            <%}%>
+            
             <div class="row mt-2">
                 <div class="col-4 col-lg-4">
                     <img src="https://pbs.twimg.com/profile_images/1069076161156669440/eIgNl7NO_400x400.jpg" alt="" class="img-list-icon">
