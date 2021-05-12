@@ -1,0 +1,73 @@
+<!-- Profile Pic -->
+<div class="col-12 text-center mt-3">
+    <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="Profile Pic" style="height: 150px; width: 150px; border-radius: 8px;">
+</div>
+<div class="col-12 text-center mt-1">
+    <button class=" btn bg-w" data-toggle="modal" data-target="#DpModal"><i class="fas fa-plus mr-1"></i>Change Picture</small>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="DpModal" tabindex="-1" role="dialog" aria-labelledby="DpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="DpModalLabel">Upload Profile Picture</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+              <div class="row">
+                <div class="col-12 mt-2">
+                    <label for="">Upload Image ( JPG )</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" size="1" required>
+                        <label class="custom-file-label" for="customFile" >Choose file</label>
+                    </div>
+                </div>
+                <script>
+                    $(".custom-file-input").on("change", function() {
+                      var fileName = $(this).val().split("\\").pop();
+                      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                    });
+                </script>
+                <div class="col-12">
+                    <div class="text-center mt-3">
+                        <img id="outImage"  class="img-preview d-none">
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('customFile').onchange = function (evt) {
+                        var tgt = evt.target || window.event.srcElement,
+                        files = tgt.files;
+                        // FileReader support
+                        if (FileReader && files && files.length) {
+                            var fr = new FileReader();
+                            fr.onload = function () {
+                                document.getElementById("outImage").src = fr.result;
+                                document.getElementById("outImage").classList.remove('d-none');
+                            }
+                            fr.readAsDataURL(files[0]);
+                            console.log("supported");
+                        }
+                        else {
+                            console.log("no support");
+                        }
+                    }
+                </script>
+                <div class="col-12 mt-3">
+                    <div class="text-center">
+                        <button class="btn bg-y text-w hv-w">Upload</button>
+                    </div>
+                </div>
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
