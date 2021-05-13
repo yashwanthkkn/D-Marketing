@@ -6,12 +6,12 @@
         <div class="col-12 mt-4">
             <div class="row">
                 <div class="col-12 col-lg-4 mt-2">
-                    <img src="/img/hylet_png.png" alt="" class="img-list-icon">
+                    <img src="<%=page.page_dp_url%>" alt="" class="img-list-icon">
                 </div>
                 <div class="col-12 col-lg-8 mt-2">
                     <div class="px-2">
                         <p></p>
-                        <span class="text-b h5"><strong>Mokka_Engineer</strong> <i class="fas fa-check-circle"></i></span>
+                        <span class="text-b h5"><strong><%=page.page_name%></strong> <i class="fas fa-check-circle"></i></span>
                         <div class="link mt-2">
                             For verifying page, click  
                             <a href="https://www.instagram.com/mokkaengineer/" class="text-y" target="_NEW">
@@ -19,7 +19,11 @@
                             </a>
                         </div>
                         <div class="row text-center text-o mt-2">
-                            <div class="col-6 col-lg-4 bg-white"> <strong>22M</strong></div>
+                            <% if(page.page_followers >= 1000){%>
+                                <div class="col-6 col-lg-4 bg-white"> <strong><%= page.page_followers/1000 %> M</strong></div>
+                            <%}else{%>
+                                <div class="col-6 col-lg-4 bg-white"> <strong><%= page.page_followers%> K</strong></div>
+                            <%}%>
                             <div class="col-6 col-lg-4 bg-white "> <strong>122</strong> </div>
                         </div>
                         <div class="row text-center text-d-us">
@@ -43,17 +47,17 @@
                                 <tr>
                                     <td>Post</td>
                                     <td>1</td>
-                                    <td><input type="radio" name="choice"> <i class="fas fa-rupee-sign"></i> 200</td>
+                                    <td><input type="radio" name="choice"> <i class="fas fa-rupee-sign"></i> <%= page.page_post%></td>
                                 </tr>
                                 <tr>
                                     <td>Story</td>
                                     <td>1</td>
-                                    <td><input type="radio" name='choice'> <i class="fas fa-rupee-sign"></i> 200</td>
+                                    <td><input type="radio" name='choice'> <i class="fas fa-rupee-sign"></i> <%= page.page_story%></td>
                                 </tr>
                                 <tr>
                                     <td>Both</td>
                                     <td>1</td>
-                                    <td><input type="radio" checked name="choice"> <i class="fas fa-rupee-sign"></i> 200</td>
+                                    <td><input type="radio" checked name="choice"> <i class="fas fa-rupee-sign"></i> <%= page.page_both%></td>
                                 </tr>
                             </tbody>
                         </table>

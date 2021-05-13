@@ -13,15 +13,14 @@
                         <div class="col-8 col-lg-8">
                             <div class="py-2">
                                 <p class="text-b m-0"><%= page.page_name%> <i class="fas fa-check-circle"></i></p>
-                                <% if(page.page_followers >= 1000){
-                                     page.page_followers+="M";
-                                }else{
-                                    page.page_followers+="K";
-                                }%>
-                                <small class="text-d-s">Followers : <%= page.page_followers%></small>
+                                <% if(page.page_followers >= 1000){%>
+                                    <small class="text-d-s">Followers : <%= page.page_followers/1000 %> M</small>
+                                <%}else{%>
+                                    <small class="text-d-s">Followers : <%= page.page_followers%> K</small>
+                                <%}%>
                                 <p></p>
                                 <p class="m-0">Post + Story :  <strong class="text-o"><i class="fas fa-rupee-sign"></i> <%= page.page_both%></strong> </p>
-                                <a href="/user/view">
+                                <a href="/p/view/<%=page.uuid%>">
                                     <button class="btn bg-y text-w mt-2">View Profile</button>
                                 </a>
                             </div>
