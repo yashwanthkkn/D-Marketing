@@ -10,19 +10,19 @@
                 <div class="col-12">
                     <div class="px-2 py-3 bg-white rounded">
                         <!-- FORM -->
-                        <form action="">
+                        <form action="/b/add/new" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <div class="form-group">
                                         <label for="add_name">Add Name</label>
-                                        <input type="text" name="add_name" id="add_name" placeholder="eg. XYZ startup launch " class="form-control">
+                                        <input type="text" name="add_name" id="add_name" placeholder="eg. XYZ startup launch " class="form-control" required maxlength="30">
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="form-group">
                                         <label for="add_type">Type</label>
                                         <select name="add_type" id="add_type" class="form-control">
-                                            <option value="in">Instagram</option>
+                                            <option value="Instagram">Instagram</option>
                                         </select>       
                                     </div>
                                 </div>
@@ -30,7 +30,7 @@
                                     <div class="form-group">
                                         <label for="add_desc">Caption</label><br>
                                         <small class="text-d-us">The Caption you put here will be used as Post Caption.So make sure to include @mentions and #tag (if any) </small>
-                                        <textarea name="add_desc" id="add_desc" cols="30" rows="5" class="form-control" maxlength="100"></textarea>
+                                        <textarea name="add_desc" id="add_desc" cols="30" rows="5" class="form-control" maxlength="100" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -42,7 +42,7 @@
                                 <div class="col-12 mt-2">
                                     <label for="">Upload Image / Poster (if any)</label>
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile" size="1">
+                                        <input type="file" class="custom-file-input" name="poster" id="customFile" size="1" required title="Kindly Upload One Image of type jpg or png">
                                         <label class="custom-file-label" for="customFile" >Choose file</label>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                 </script>
                                 <div class="col-12 mt-3">
                                     <div class="text-center">
-                                        <button class="btn bg-b text-w mr-3 hv-w" data-toggle="modal" data-target="#exampleModal" type="button">Preview Add</button>
+                                        <!-- <button class="btn bg-b text-w mr-3 hv-w" data-toggle="modal" data-target="#exampleModal" type="button">Preview Add</button> -->
                                         <button class="btn bg-y text-w hv-w">Create Add</button>
                                     </div>
                                 </div>
