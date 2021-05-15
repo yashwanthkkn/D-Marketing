@@ -34,38 +34,55 @@
                 </div>
                 <div class="col-12 mt-3">
                     <h5 class="text-b px-2">Pricing</h5>
-                    <div class="px-2 text-center ">
-                        <table class="table bg-white rounded">
-                            <thead class="text-d-us">
-                                <tr>
-                                    <th>Type</th>
-                                    <th>Day(s)</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Post</td>
-                                    <td>1</td>
-                                    <td><input type="radio" name="choice"> <i class="fas fa-rupee-sign"></i> <%= page.page_post%></td>
-                                </tr>
-                                <tr>
-                                    <td>Story</td>
-                                    <td>1</td>
-                                    <td><input type="radio" name='choice'> <i class="fas fa-rupee-sign"></i> <%= page.page_story%></td>
-                                </tr>
-                                <tr>
-                                    <td>Both</td>
-                                    <td>1</td>
-                                    <td><input type="radio" checked name="choice"> <i class="fas fa-rupee-sign"></i> <%= page.page_both%></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                            <button class="btn bg-y text-w mr-2 mt-2">Add to Campaign</button>
-                        
-                        <hr>
-                    </div>
+                    <form action="/b/add/<%=page.uuid%>/campaign" method="POST">
+                        <div class="px-2 text-center ">
+                            <table class="table bg-white rounded">
+                                <thead class="text-d-us">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Day(s)</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Post</td>
+                                        <td>1</td>
+                                        <td><input type="radio" name="choice" value="<%=page.page_post+' Post'%>"> <i class="fas fa-rupee-sign"></i> <%= page.page_post%></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Story</td>
+                                        <td>1</td>
+                                        <td><input type="radio" name='choice' value="<%=page.page_story+' Story'%>"> <i class="fas fa-rupee-sign"></i> <%= page.page_story%></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Both</td>
+                                        <td>1</td>
+                                        <td><input type="radio" checked name="choice" value="<%=page.page_both+' Both'%>"> <i class="fas fa-rupee-sign"></i> <%= page.page_both%></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <%if(adds){%>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <select type="text" name="add" id="adds" class="form-control mt-2">
+                                                <!-- <option value="">Hylet App Launch</option> -->
+                                                <%adds.forEach(add=>{%>
+                                                    <option value="<%=add.uuid%>"><%=add.name%></option>
+                                                <%})%>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn bg-y text-w mr-2 mt-2">Add to Campaign</button>
+                                    </div>
+                                </div>
+                            <%}%>
+                            
+                            <hr>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
