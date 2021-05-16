@@ -53,7 +53,7 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <div class="px-2 py-3 bg-white rounded">
-                        <form action="">
+                        <form action="/p/upload/proof/<%=add.uuid%>" enctype="multipart/form-data" method="POST">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -62,7 +62,7 @@
                                             <small>This will be verified and the amount will be credited to your account as soon as the verification done</small>
                                             <p></p>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="customFile" size="1">
+                                                <input type="file" class="custom-file-input" name="ss" id="customFile" size="1" required>
                                                 <label class="custom-file-label" for="customFile" >Choose file</label>
                                             </div>
                                             <script>
@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <div class="col-12 mt-4">
+        <!-- <div class="col-12 mt-4">
             <h5>Reject Advertisement</h5>
             <div class="row mt-3">
                 <div class="col-12">
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>
