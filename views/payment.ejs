@@ -9,19 +9,21 @@
         <div class="col-12 mt-3">
             <table class="table bg-white rounded">
                 <tr>
+                    <th>Date</th>
                     <th>Name</th>
-                    <th>Details</th>
                     <th>Payment</th>
                 </tr>
-                <tr>
-                    <td>App Launch</td>
-                    <td>
-                        <button class="btn btn-sm text-w bg-y" data-toggle="modal" data-target="#exampleModal"> View</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-sm text-w bg-y">Pay<i class="fas fa-rupee-sign ml-2"></i> 100</button>
-                    </td>
-                </tr>
+                <%adds.forEach(add=>{%>
+                    <tr>
+                        <td><%= Moment(Number(add.createdAt)).format("MMM Do YY"); %></td>
+                        <td><%=add.name%></td>
+                        <td>
+                            <a href="/user/billing/<%=add.uuid%>">
+                                <button class="btn btn-sm text-w bg-y">Pay<i class="fas fa-rupee-sign ml-2"></i> <%=add.totalPrice%></button>
+                            </a>
+                        </td>
+                    </tr>
+                <%})%>
             </table>
         </div>
 

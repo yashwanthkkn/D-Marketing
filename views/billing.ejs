@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container-fluid">
+    <div class="row">
+        <%- include("partials/menu") %>
+        <div class="col-12 mt-2">
+            <h5 class="text-b">Payments</h5>
+        </div>
+    </div>
+    <div class="col-12 mt-3">
+        <table class="table bg-white rounded">
+            <tr>
+                <th>Date</th>
+                <th>Page</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+            <%pages.forEach(page=>{%>
+                <tr>
+                    <td><%= Moment(Number(page.addedAt)).format("MMM Do YY"); %></td>
+                    <td>
+                        <img src="<%=page.page_dp_url%>" alt="" class="img-brand-logo"> 
+                        <span class="ml-2"><%=page.page_name%></span>
+                    </td>
+                    <td><%=page.type%></td>
+                    <td><i class="fas fa-rupee-sign"></i> <%=page.price%></td>
+                </tr>
+            <%})%>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><strong>Total</strong></td>
+                <td><strong> <i class="fas fa-rupee-sign"></i> <%=add.totalPrice%></strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="">
+                        <button class="btn bg-b text-w">Pay Now</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<%- include("partials/footer") %>
