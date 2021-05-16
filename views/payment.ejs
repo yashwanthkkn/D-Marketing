@@ -13,6 +13,11 @@
                     <th>Name</th>
                     <th>Payment</th>
                 </tr>
+                <%if(adds.length == 0){%>
+                    <tr>
+                        <td colspan="3" class="text-d-us text-center">No Payment Required</td>
+                    </tr>
+                <%}%>
                 <%adds.forEach(add=>{%>
                     <tr>
                         <td><%= Moment(Number(add.createdAt)).format("MMM Do YY"); %></td>

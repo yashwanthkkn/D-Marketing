@@ -51,23 +51,25 @@
                     <div class="col-12 col-lg-6">
                         <div class="px-2 py-3 bg-white">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12">
                                     <img src="<%=page.page_dp_url%>" alt="" class="img-brand-logo">
                                     <span class="text-b h5 ml-2"><%=page.page_name%></span><br>
                                     <small class="text-d-us mt-2"><%= Moment(Number(page.addedAt)).format("MMM Do YY"); %></small>
                                 </div>
                                 <%if(!page.payment){%>
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <p class="text-danger">Payment Required*</p>
                                     </div>
-                                <%}else{%>
-                                    <button class="btn btn-sm bg-y text-w hv-w">Proof</button>
-                                    <button class="btn btn-sm bg-y text-w ml-1 hv-w">Visit Page</button><br>
                                 <%}%>
                                 <div class="col-6">
                                     <p class="text-d-us mt-3">Price: <span class="text-b"> <i class="fas fa-rupee-sign"></i> <%= page.price%></span></p>
                                     <p class="text-d-us ">Promo Type: <span class="text-b"><%= page.type%></span></p>
                                 </div>
+                                <%if(page.state){%>
+                                    <div class="col-6">
+                                        <button class="btn btn-sm bg-y text-w hv-w mt-4">Proof</button>
+                                    </div>
+                                <%}%>
                             </div>
                         </div>
                     </div>
