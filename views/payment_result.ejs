@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center mt-5">
+                <%if(result){%>
+                    <h5 class="text-success">Your Payment was Successful ...</h5>
+                    <p class="text-d-us mt-3">
+                        <a href="/user/payment">
+                            Go to Payments
+                        </a>
+                    </p>
+                <%}else{%>
+                    <h5 class="text-danger">Your Payment was Unsuccessful ...</h5>
+                    <p>If the money was debited from your account ,it will be transferred back to your account within 2 or 3 busniess days</p>
+                    <p class="text-d-us mt-3">
+                        <a href="/user/payment">
+                            Go to Payments
+                        </a>
+                    </p>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/footer") %>

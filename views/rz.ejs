@@ -1,0 +1,49 @@
+<%- include("partials/header") %>
+<%- include("partials/nav") %>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center mt-5">
+                <h5 class="text-d-us">Please Wait! Do not refresh ...</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<%if(order){%>
+    <p id='od' class="d-none"><%=order.id%></p>
+    <p id='kd' class="d-none"><%=order.kid%></p>
+    <p id='p' class="d-none"><%=order.amount%></p>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+    var oid = document.getElementById('od').innerText;
+    var kid = document.getElementById('kd').innerText;
+    var p = document.getElementById('p').innerText;
+    document.getElementById('od').innerText = "";
+    document.getElementById('kd').innerText = "";
+    document.getElementById('p').innerText = "";
+    var options = {    
+    "key": kid,     
+    "amount": p,     
+    "currency": "INR",    
+    "name": "Hylet",    
+    "description": "Payment for Promotion",    
+    "image": "https://hylet-s3-bucket.s3.ap-south-1.amazonaws.com/hylet_png.png",    
+    "order_id": oid,    
+    "callback_url": `http://localhost:3000/payment/result/${oid}`,    
+    "redirect":true,    
+    "notes": {        
+        "address": "WhiteField, Banglore"    
+    },    
+    "theme": {        
+            "color": "#3399cc"
+    }
+};
+
+    window.onload = function(e){
+        var rzp1 = new Razorpay(options);
+        rzp1.open();    
+        e.preventDefault();
+    }
+    </script>
+<%}%>
+<%- include("partials/footer") %>
