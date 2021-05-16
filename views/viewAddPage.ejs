@@ -11,12 +11,12 @@
                     <div class="px-2 py-3 bg-white rounded">
                         <div class="row">
                             <div class="col-12">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Burger_King_logo.svg/1200px-Burger_King_logo.svg.png" alt="" class="img-brand-logo">
-                                <span class="text-b h5 ml-2">Burger King</span><br>
+                                <img src="<%=add.dp_url%>" alt="" class="img-brand-logo">
+                                <span class="text-b h5 ml-2"><%=add.name%></span><br>
                             </div>
                             <div class="col-12 mt-3">
                                 <div class="text-center mt-3">
-                                    <img id="outImage"  class="img-preview" src="https://miro.medium.com/max/1200/1*pIJH1mPega8583Y3NuPaLg.jpeg">
+                                    <img id="outImage"  class="img-preview" src="<%=add.poster_link%>">
                                 </div>
                                 <div class="text-center">
                                     <small class="text-d-us text-center"> Use this image as Poster</small>
@@ -31,14 +31,14 @@
                                 <div class="form-group">
                                     <label for="add_desc">Caption</label><br>
                                     <small class="text-d-us">Use this as POST caption</small>
-                                    <textarea name="add_desc" id="add_desc" cols="30" rows="5" class="form-control mt-2" maxlength="100" readonly>The Most awaited Burger King is now at your home town..... @burgerking #BurgerKing #cbe</textarea>
+                                    <textarea name="add_desc" id="add_desc" cols="30" rows="5" class="form-control mt-2" maxlength="100" readonly><%= add.caption%></textarea>
                                     <button class="btn btn-sm btn-outline-primary mt-1">copy</button>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="weblink">Website or Video link (if any)</label>
-                                    <input type="text" class="form-control" name="weblink" id="weblink" placeholder="eg. https://hylet.in" value="https://burgerking.in" readonly>
+                                    <input type="text" class="form-control" name="weblink" id="weblink" placeholder="eg. https://hylet.in" value="<%= add.weblink%>" readonly>
                                     <button class="btn btn-sm btn-outline-primary mt-1">copy</button>
                                 </div>
                             </div>

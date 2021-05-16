@@ -4,68 +4,43 @@
     <div class="row">
         <%- include("partials/menu") %>
         <!-- Add List -->
-        <div class="col-12 mt-3">
-            <div class="px-2 py-3 bg-white">
-                <div class="row">
-                    <div class="col-12">
-                        <img src="https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/v1488266135/vw9dwa2fbgqzdmkizszx.png" alt="" class="img-brand-logo">
-                        <span class="text-b h5 ml-2">Burger King</span><br>
-                    </div>
-                    <div class="col-12 col-lg-8 mt-3">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="m-0 h6">New Store in Cbe</p>
-                                <small class="text-d-us">1/12/21</small>
-                            </div>
-                            <div class="col-6">
-                                <span class="px-1 py-2 rounded border-y border text-b hv-y">Yet to Start</span>
-                            </div>
+        <%if(brands.length == 0){%>
+            <div class="col-12 mt-3">
+                <h5 class="text-d-us">You have no new offers</h5>
+            </div>
+        <%}%>
+        <%brands.forEach(brand=>{%>
+            <div class="col-12 mt-3">
+                <div class="px-2 py-3 bg-white">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="<%=brand.brand_dp_url%>" alt="" class="img-brand-logo">
+                            <span class="text-b h5 ml-2"><%=brand.brand_name%></span><br>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-8 mt-2">
-                        Promotion Type : <span class="text-o">Post</span><br>
-                        <p class="text-d-us">Worth : <i class="fas fa-rupee-sign"> 350</i></p>
-                        <div class="text-center mt-2">
-                            <a href="/p/add/view">
-                                <button class="btn bg-y text-w hv-w">View</button>
-                            </a>
+                        <!-- <div class="col-12 col-lg-8 mt-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="m-0 h6">New Store in Cbe</p>
+                                    <small class="text-d-us">1/12/21</small>
+                                </div>
+                                <div class="col-6">
+                                    <span class="px-1 py-2 rounded border-y border text-b hv-y">Yet to Start</span>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-12 col-lg-8 mt-2">
+                            Promotion Type : <span class="text-o"><%=brand.type%></span><br>
+                            <p class="text-d-us">Worth : <i class="fas fa-rupee-sign"> <%=brand.price%></i></p>
+                            <div class="text-center mt-2">
+                                <a href="/p/add/view/<%=brand.add_uuid%>">
+                                    <button class="btn bg-y text-w hv-w">View</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-12 mt-3">
-            <div class="px-2 py-3 bg-white">
-                <div class="row">
-                    <div class="col-12">
-                        <img src="https://pbs.twimg.com/profile_images/1334527633992761344/kwlzzLs6_400x400.png" alt="" class="img-brand-logo">
-                        <span class="text-b h5 ml-2">McDonalds</span><br>
-                    </div>
-                    <div class="col-12 col-lg-8 mt-3">
-                        <div class="row">
-                            <div class="col-6">
-                                <p class="m-0 h6">New Store in Cbe</p>
-                                <small class="text-d-us">1/12/21</small>
-                            </div>
-                            <div class="col-6">
-                                <span class="px-1 py-2 rounded border-y border text-b hv-y">Yet to Start</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-8 mt-2">
-                        Promotion Type : <span class="text-o">Post</span><br>
-                        <p class="text-d-us">Worth : <i class="fas fa-rupee-sign"> 350</i></p>
-                        <div class="text-center mt-2">
-                            <a href="/p/add/view">
-                                <button class="btn bg-y text-w hv-w">View</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <%})%>
         
         
     </div>
