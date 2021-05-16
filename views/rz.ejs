@@ -13,14 +13,17 @@
     <p id='od' class="d-none"><%=order.id%></p>
     <p id='kd' class="d-none"><%=order.kid%></p>
     <p id='p' class="d-none"><%=order.amount%></p>
+    <p id='a' class="d-none"><%=order.add_uuid%></p>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
     var oid = document.getElementById('od').innerText;
     var kid = document.getElementById('kd').innerText;
     var p = document.getElementById('p').innerText;
+    var a = document.getElementById('a').innerText;
     document.getElementById('od').innerText = "";
     document.getElementById('kd').innerText = "";
     document.getElementById('p').innerText = "";
+    document.getElementById('a').innerText = "";
     var options = {    
     "key": kid,     
     "amount": p,     
@@ -29,7 +32,7 @@
     "description": "Payment for Promotion",    
     "image": "https://hylet-s3-bucket.s3.ap-south-1.amazonaws.com/hylet_png.png",    
     "order_id": oid,    
-    "callback_url": `http://localhost:3000/payment/result/${oid}`,    
+    "callback_url": `http://localhost:3000/payment/result/${a}/${oid}`,    
     "redirect":true,    
     "notes": {        
         "address": "WhiteField, Banglore"    
