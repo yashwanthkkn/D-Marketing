@@ -6,7 +6,7 @@
         <!-- Add List -->
         <%if(brands.length == 0){%>
             <div class="col-12 mt-3">
-                <h5 class="text-d-us">You have no new offers</h5>
+                <h5 class="text-d-us text-center">You have no new offers</h5>
             </div>
         <%}%>
         <%brands.forEach(brand=>{%>
@@ -21,17 +21,6 @@
                             <%}%>
                             <br>
                         </div>
-                        <!-- <div class="col-12 col-lg-8 mt-3">
-                            <div class="row">
-                                <div class="col-6">
-                                    <p class="m-0 h6">New Store in Cbe</p>
-                                    <small class="text-d-us">1/12/21</small>
-                                </div>
-                                <div class="col-6">
-                                    <span class="px-1 py-2 rounded border-y border text-b hv-y">Yet to Start</span>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="col-12 col-lg-8 mt-2">
                             Promotion Type : <span class="text-o"><%=brand.type%></span><br>
                             <p class="text-d-us">Worth : <i class="fas fa-rupee-sign"> <%=brand.price%></i></p>
