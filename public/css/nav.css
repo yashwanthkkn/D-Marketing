@@ -24,15 +24,6 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* .navigation:hover ~ .content{
-    transition: 0.5s;
-    margin-left: 300px;
-}
-.navigation.active ~ .content{
-    transition: 0.5s;
-    margin-left: 300px;
-} */
-
 .navigation ul{
     position: absolute;
     top: 0;
