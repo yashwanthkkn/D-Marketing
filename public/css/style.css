@@ -43,6 +43,11 @@ label{
     width: 260px;
 }
 
+.nav-logo{
+    height: 30px;
+    width: 30px;
+}
+
 .img-preview{
     max-width: 400px;
     width: 100%;
